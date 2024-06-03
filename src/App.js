@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 
 function App() {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const HandleLogin = () => {
+    axios.post('https://localhost:7184/api/login',
+      {
+        login: login,
+        password: password
+      },
+      { withCredentials: true } // Додаємо withCredentials для відправлення кукі
+    )
+    .then(response => {
+       if (response.status === 200) {
+          navigate("/suplier/pruducts");
+        }
+    })
+    .catch(error => {
+      console.error('There was an error!', error);
+    });
+    console.log(password, login)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="login-container">
+        <input onChange={(e) => setLogin(e.target.value)} placeholder="логін" className="login-input-field" />
+        <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="пароль" className="login-input-field" />
+        <button onClick={HandleLogin} className="login-button">
+          <div className="login-button-text">Увійти</div>
+        </button>
+      </div>
     </div>
   );
 }

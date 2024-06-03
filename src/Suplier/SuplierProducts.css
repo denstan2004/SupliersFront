@@ -1,0 +1,46 @@
+.suplier-container{
+      /* Вертикальне вирівнювання по центру */
+
+}
+.suplier-position-container{
+    display: flex;             /* Використання Flexbox */
+    justify-content: center;
+    flex-direction: column;    /* Розташування елементів один під одним */
+
+
+}
+.suplier-position-text{
+    font-size: 4vh;
+    align-self: center;       /* Горизонтальне вирівнювання по центру */
+    justify-self: center;
+    font-weight: bold;
+}
+.suplier-choose-container{
+    display: flex;             /* Використання Flexbox */
+    justify-content: end;
+}
+.supier-product-list{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+}
+.suplier-product-list-text{
+    width: 100vw;
+    display: flex;
+    flex-direction:row;
+    
+}
+.suplier-product-list-text div{
+    width: 15vw;
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+}
+.suplier-submit-button{
+    width: 20vw;
+    height: 5vh;
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+    background-color: green;
+}

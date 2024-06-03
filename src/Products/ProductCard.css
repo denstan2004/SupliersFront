@@ -1,0 +1,12 @@
+.product-item
+{
+    display: flex;
+    flex-direction: row;
+}
+.product-item div{
+    width: 15vw;
+    font-weight:500;
+    
+    align-self: center;
+    justify-self: center;
+}

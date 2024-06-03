@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-container{
+  display: flex;             /* Використання Flexbox */
+  flex-direction: column;    /* Розташування елементів один під одним */
+  justify-content: center;   /* Вертикальне вирівнювання по центру */
+  align-items: center;       /* Горизонтальне вирівнювання по центру */
+  height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-button{
+  height: 5vh;
+  width: 10vw;
+  margin-top: 5vh;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.login-button-text{
+  font-size: 1vw;
 }
-
-.App-link {
-  color: #61dafb;
+.login-input-field{
+  height: 5vh;
+  width: 15vw;
+  margin-top: 1vh;
 }
+.login-input-field::placeholder{
+  font-size: 1vw;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
