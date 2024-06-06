@@ -1,0 +1,54 @@
+.aprove-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    padding: 2vh;
+    background: lightgray;
+    z-index: 1000;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aprove-container div {
+    margin-bottom: 1vh; /* Відступ між текстом і кнопками */
+}
+
+.aprove-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.aprove-submit {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 0.5vh 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.decline-submit {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 0.5vh 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

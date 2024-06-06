@@ -17,7 +17,6 @@
 }
 .suplier-choose-container{
     display: flex;             /* Використання Flexbox */
-    justify-content: end;
 }
 .supier-product-list{
     width: 100vw;
@@ -37,6 +36,17 @@
     justify-self: center;
 }
 .suplier-submit-button{
+    width: 20vw;
+    height: 5vh;
+    color: white;
+    font-weight: bold;
+   margin-left: 40vw;
+    font-size: 2vh;
+    background-color: green;
+}
+.suplier-navigate-button
+{
+   
     width: 20vw;
     height: 5vh;
     color: white;

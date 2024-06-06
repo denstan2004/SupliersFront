@@ -56,15 +56,21 @@ function SupplierProducts() {
     const handleNavigate = () => {
         navigate('/import', { state: { products } });
     };
-    
+    const handleSubmit = () => {
+    };
+    useEffect (()=>{console.log(products)},[products])
     const filteredProducts = selectedTrademark === 'all' ? products : products.filter(product => product.trademark === selectedTrademark);
 
     return (
         <div className="suplier-container">
             <div className="suplier-position-container">
                 <div className="suplier-position-text">Продукція</div>
+                
                 <div className="suplier-choose-container">
-                    <button className='suplier-submit-button' onClick={handleNavigate}>Перейти до цільової сторінки</button>
+                   
+                    <button className='suplier-navigate-button' onClick={handleNavigate}>Загрузити таблицю</button>
+                    <button className='suplier-submit-button' onClick={handleSubmit}>Оновити ціни продуктів</button>
+
                     <input value={selectedDate || ''} type="date" id="date-picker" onChange={handleDateChange}></input>
                     <select className="suplier-select" value={selectedTrademark} onChange={handleTrademarkChange}>
                         {uniqueTrademarks.map(trademark => (
@@ -84,6 +90,7 @@ function SupplierProducts() {
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} onPriceChange={handlePriceChange} />
                     ))}
+                    
                 </div>
             </div>
         </div>

@@ -1,0 +1,12 @@
+.not-found-text {
+ color: red;
+ text-decoration:line-through;
+}
+  .product-item {
+    display: flex;
+    flex-direction: row;
+  }
+  .not-found {
+    color: red;
+   }
+ 

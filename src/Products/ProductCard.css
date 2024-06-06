@@ -5,6 +5,7 @@
 }
 .product-item div{
     width: 15vw;
+    font-size: 1vw;
     font-weight:500;
     
     align-self: center;
