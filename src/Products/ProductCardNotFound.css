@@ -1,12 +1,25 @@
 .not-found-text {
  color: red;
  text-decoration:line-through;
+ width: 14vw;
+ font-size: 1vw;
+ font-weight:500;
+ margin-left: 0.5vw;
+ align-self: center;
+ justify-self: center;
 }
   .product-item {
     display: flex;
     flex-direction: row;
+
   }
   .not-found {
     color: red;
+    width: 14vw;
+    font-size: 1vw;
+    font-weight:500;
+    margin-left: 0.5vw;
+    align-self: center;
+    justify-self: center;
    }
  

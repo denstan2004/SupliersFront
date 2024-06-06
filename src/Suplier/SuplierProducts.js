@@ -33,7 +33,7 @@ function SupplierProducts() {
     };
 
     const extractUniqueTrademarks = (products) => {
-        const trademarks = products.map(product => product.trademark);
+        const trademarks = products.map(product => product.nameBrand);
         const uniqueTrademarks = ['all', ...new Set(trademarks)];
         setUniqueTrademarks(uniqueTrademarks);
     };
@@ -42,36 +42,61 @@ function SupplierProducts() {
         setSelectedTrademark(event.target.value);
     };
 
-    const handlePriceChange = (productId, newPrice) => {
+    const handlePriceChange = (productbarCode, newPrice) => {
+        console.log(productbarCode, newPrice);
         setProducts(prevProducts => prevProducts.map(product => 
-            product.id === productId ? { ...product, newPrice } : product
+            product.barCode === productbarCode ? { ...product, newPrice } : product
         ));
     };
 
     const handleDateChange = (event) => {
         setSelectedDate(event.target.value);
-        console.log (selectedDate);
+        console.log(selectedDate);
     };
 
     const handleNavigate = () => {
         navigate('/import', { state: { products } });
     };
-    const handleSubmit = () => {
+
+    const handleSubmit = async () => {
+        const updatedProducts = products.filter(product => product.newPrice != null);
+
+        const requestPayload = {
+            Supliers: updatedProducts,
+            Comment: "Updated prices",
+            CreationDate: new Date(),
+            ProductUpdateDate:selectedDate
+        };
+
+        try {
+            const response = await axios.post('https://localhost:7184/Create/Changes', requestPayload, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            });
+
+            if (response.status === 200) {
+                console.log('Price change request submitted successfully');
+                // Додаткова логіка після успішного відправлення
+            }
+        } catch (error) {
+            console.error('There was an error submitting the price change request', error);
+        }
     };
-    useEffect (()=>{console.log(products)},[products])
-    const filteredProducts = selectedTrademark === 'all' ? products : products.filter(product => product.trademark === selectedTrademark);
+
+    useEffect(() => { console.log(products) }, [products]);
+
+    const filteredProducts = selectedTrademark === 'all' ? products : products.filter(product => product.nameBrand === selectedTrademark);
 
     return (
         <div className="suplier-container">
             <div className="suplier-position-container">
                 <div className="suplier-position-text">Продукція</div>
-                
                 <div className="suplier-choose-container">
-                   
                     <button className='suplier-navigate-button' onClick={handleNavigate}>Загрузити таблицю</button>
                     <button className='suplier-submit-button' onClick={handleSubmit}>Оновити ціни продуктів</button>
-
-                    <input value={selectedDate || ''} type="date" id="date-picker" onChange={handleDateChange}></input>
+                    <input value={selectedDate || ''} type="date" id="date-picker" onChange={handleDateChange} />
                     <select className="suplier-select" value={selectedTrademark} onChange={handleTrademarkChange}>
                         {uniqueTrademarks.map(trademark => (
                             <option key={trademark} value={trademark}>{trademark}</option>
@@ -79,18 +104,17 @@ function SupplierProducts() {
                     </select>
                 </div>
                 <div className="supier-product-list">
-                    <div className='suplier-product-list-text'>
-                        <div>Назва</div>                      
-                        <div>Торгова марка</div>
-                        <div>Код</div>
-                        <div>Артикул</div>
-                        <div>Ціна</div>
-                        <div>Оновлена Ціна</div>
+                    <div className='suplier-product-list-container'>
+                        <div className='suplier-product-list-name'>Назва</div>
+                        <div className='suplier-product-list-text'>Торгова марка</div>
+                        <div className='suplier-product-list-text'>Код</div>
+                        <div className='suplier-product-list-text'>Артикул</div>
+                        <div className='suplier-product-list-text'>Ціна</div>
+                        <div className='suplier-product-list-text'>Оновлена Ціна</div>
                     </div>
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} onPriceChange={handlePriceChange} />
                     ))}
-                    
                 </div>
             </div>
         </div>

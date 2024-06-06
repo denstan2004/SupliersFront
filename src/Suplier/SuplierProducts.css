@@ -20,18 +20,28 @@
 }
 .supier-product-list{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: lightgray;
 }
-.suplier-product-list-text{
+.suplier-product-list-container{
     width: 100vw;
     display: flex;
     flex-direction:row;
     
 }
-.suplier-product-list-text div{
-    width: 15vw;
-    font-weight: bold;
+.suplier-product-list-text {
+    width: 12vw;
+    font-size: 1vw;
+    font-weight:500;
+    margin-left: 0.5vw;
+    align-self: center;
+    justify-self: center;
+}
+.suplier-product-list-name {
+    width: 50vw;
+    font-size: 1vw;
+    font-weight:500;
+    
     align-self: center;
     justify-self: center;
 }

@@ -1,10 +1,19 @@
-.product-item
+.product-container
 {
     display: flex;
     flex-direction: row;
 }
-.product-item div{
-    width: 15vw;
+.product-item {
+    width: 12vw;
+    font-size: 1vw;
+    font-weight:500;
+    margin-left: 0.5vw;
+    align-self: center;
+    justify-self: center;
+}
+.product-name
+{
+    width: 50vw;
     font-size: 1vw;
     font-weight:500;
     
