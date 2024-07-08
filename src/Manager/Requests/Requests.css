@@ -1,0 +1,47 @@
+.requests-list
+{
+    margin-top: 1vw;
+}
+
+.requests-button-approve-all {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.manager-request-list-name{
+    width: 20vw;
+    font-size: 1vw;
+    font-weight:500;
+    
+    align-self: center;
+    justify-self: center;
+}
+.manager-request-list-text{
+    width: 10vw;
+    font-size: 1vw;
+    font-weight:500;
+    margin-left: 0.5vw;
+    align-self: center;
+    justify-self: center;
+}
+.requests-button-reject-all {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.requests-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.requests-select {
+    height: 5vh;
+}

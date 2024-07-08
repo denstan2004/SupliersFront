@@ -20,7 +20,12 @@ function App() {
     )
     .then(response => {
        if (response.status === 200) {
-          navigate("/suplier/pruducts");
+        console.log(response);
+        if(response.data.message=="suplier")
+          {console.log("sup")
+          navigate("/choose");}
+        else if(response.data.message=="manager") 
+          navigate("/manager/choose")
         }
     })
     .catch(error => {

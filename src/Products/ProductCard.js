@@ -25,6 +25,19 @@ function ProductCard({ product, onPriceChange }) {
             </div>
             <div className="product-item">{product.aritcle}</div>
             <div className="product-item">{product.price}</div>
+            {product.isExpired===false ?
+              <div className={
+                product.status === "Pennding" 
+                ? "suplier-request-card-status-orange" 
+                : product.status === "Accepted"
+                ? "suplier-request-card-status-green"
+                : "suplier-request-card-status-red"
+            }>
+                {product.status}
+            </div >  
+            :
+             <div className="suplier-request-card-status-orange" />
+            }
             <input 
                 placeholder='Оновлена ціна'
                 value={product.newPrice || ''}

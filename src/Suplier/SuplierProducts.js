@@ -57,16 +57,28 @@ function SupplierProducts() {
     const handleNavigate = () => {
         navigate('/import', { state: { products } });
     };
+    const handleNavigateRequest = () => {
+        navigate('/suplier/requests', { state: { products } });
+    };
 
     const handleSubmit = async () => {
-        const updatedProducts = products.filter(product => product.newPrice != null);
+        const updatedProducts = products.filter(product => product.newPrice != null && product.newPrice != 0);
 
         const requestPayload = {
             Supliers: updatedProducts,
-            Comment: "Updated prices",
-            CreationDate: new Date(),
-            ProductUpdateDate:selectedDate
+            ProductUpdateDate: selectedDate
         };
+
+        const currentDate = new Date();
+        const datePlusWeek = new Date(currentDate);
+        datePlusWeek.setDate(currentDate.getDate() + 7);
+
+        const selectedDateObject = new Date(selectedDate);
+
+        if (selectedDateObject <= datePlusWeek) {
+            alert("Дата початку має бути мінімум через тиждень від сьогоднішнього дня");
+            return;
+        }
 
         try {
             const response = await axios.post('https://localhost:7184/Create/Changes', requestPayload, {
@@ -78,7 +90,7 @@ function SupplierProducts() {
 
             if (response.status === 200) {
                 console.log('Price change request submitted successfully');
-                // Додаткова логіка після успішного відправлення
+                // Additional logic after successful submission
             }
         } catch (error) {
             console.error('There was an error submitting the price change request', error);
@@ -95,6 +107,7 @@ function SupplierProducts() {
                 <div className="suplier-position-text">Продукція</div>
                 <div className="suplier-choose-container">
                     <button className='suplier-navigate-button' onClick={handleNavigate}>Загрузити таблицю</button>
+                    <button className='suplier-navigate-button2' onClick={handleNavigateRequest}> Переглянути попередні оновлення</button>
                     <button className='suplier-submit-button' onClick={handleSubmit}>Оновити ціни продуктів</button>
                     <input value={selectedDate || ''} type="date" id="date-picker" onChange={handleDateChange} />
                     <select className="suplier-select" value={selectedTrademark} onChange={handleTrademarkChange}>

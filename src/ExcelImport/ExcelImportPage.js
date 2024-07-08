@@ -48,7 +48,7 @@ function ExcelParser() {
             let unmatched = [];
             let IsUnmatched=false;
             setAproveText("Відправити оновлення?")
-
+            console.log(products);
             data.forEach(row => {
                 let isPresent = false;
                 let temp;
@@ -98,7 +98,6 @@ function ExcelParser() {
       const handleSubmit = async () => {
         const requestPayload = {
             Supliers: dataMatched,
-            CreationDate: new Date(),
             ProductUpdateDate:selectedDate
         };
 

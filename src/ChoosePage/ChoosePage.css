@@ -1,0 +1,32 @@
+.choose-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height to center vertically */
+    background-color: #f0f0f0; /* Light background for better contrast */
+}
+
+.choose-page-button {
+    width: 200px; /* Fixed width for consistency */
+    padding: 15px 20px; /* Padding for a larger clickable area */
+    margin: 10px 0; /* Margin between buttons */
+    background-color: #06ad4c; /* Bootstrap primary blue */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.choose-page-button:hover {
+    background-color: #006435; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.choose-page-button:active {
+    background-color: #006435; /* Even darker blue on click */
+    transform: scale(1); /* Reset scale on click */
+}
