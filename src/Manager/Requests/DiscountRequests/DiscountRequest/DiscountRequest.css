@@ -1,0 +1,61 @@
+.discount-card-name{
+
+
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+}
+.discount-card-group-name{
+    width: 8.3vw;
+    display: flex;
+    justify-content: center;
+    border: 0.2vh solid black;
+    
+
+    font-size: 2vh;
+}
+.discount-card-price{
+    width: 7vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh  ;
+    display: flex;
+    justify-content: center;
+}
+.discount-card-adress-comment{
+    width: 6vw;
+    border: 0.2vh solid black;
+
+
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+}
+.discount-card-adress{
+    width: 15vw;
+    border: 0.2vh solid black;
+
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+}
+.discount-card-date{
+    display: flex;
+    justify-content: center;
+    border: 0.2vh solid black;
+
+    flex-direction: column;
+    width: 6vw;
+    font-size: 2vh;
+}
+.discount-card-trademark{
+    border: 0.2vh solid black;
+
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+}

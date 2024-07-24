@@ -1,0 +1,143 @@
+.suplier-container {
+    /* Вертикальне вирівнювання по центру */
+}
+
+.suplier-position-container {
+    display: flex;             /* Використання Flexbox */
+    justify-content: center;
+    flex-direction: column;    /* Розташування елементів один під одним */
+}
+
+.suplier-position-text {
+    font-size: 4vh;
+    align-self: center;       /* Горизонтальне вирівнювання по центру */
+    justify-self: center;
+    font-weight: bold;
+}
+
+.suplier-choose-container {
+    display: flex;             /* Використання Flexbox */
+}
+.suplier-product-list-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top */
+    background-color: lightgray; /* Same background color as the product list to blend in */
+    z-index: 1; /* Ensure it is above the product list */
+}
+
+.supier-product-list {
+   
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100vw;
+    background-color: lightgray;
+}
+
+.suplier-product-list-text {
+    width: 7.9vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    
+    align-self: center;
+    justify-self: center;
+}
+.suplier-product-list-newprice{
+    width: 8.2vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    
+    align-self: center;
+    justify-self: center;
+}
+.suplier-product-list-status{
+    width: 9.9vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    
+    align-self: center;
+    justify-self: center;
+}
+
+.suplier-product-list-name {
+    width: 49.55vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    align-self: center;
+    justify-self: center;
+}
+
+.suplier-submit-button {
+    width: 20vw;
+    height: 5vh;
+    color: white;
+    font-weight: bold;
+    margin-left: 39vw;
+    font-size: 2vh;
+    background-color: green;
+}
+
+.suplier-navigate-button {
+    width: 20vw;
+    height: 5vh;
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+    background-color: green;
+}
+
+.suplier-navigate-button2 {
+    width: 20vw;
+    height: 5vh;
+    margin-left: 1vw;
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+    background-color: green;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    max-width: 80%;
+    padding: 1vh 2vh;
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000; /* Ensure the error message is on top */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.error-message {
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.error-button {
+    position: absolute; /* Position relative to .error-container */
+    top: 0.2vh; /* Adjust as needed */
+    right: 0.5vh; /* Adjust as needed */
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.7vh;
+    cursor: pointer;
+}

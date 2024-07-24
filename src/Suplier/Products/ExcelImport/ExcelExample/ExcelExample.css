@@ -1,0 +1,29 @@
+.excel-example-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    padding: 2vh;
+    background: lightgray;
+    z-index: 1000;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.excel-example-photo img {
+    max-width: 100%;
+    height: auto;
+}
+.excel-example-text{
+    font-size: 2vh;
+}
+.excel-example-closebutton{
+    height: 5vh;
+    width: 5vw;
+    border-radius: 12%;
+}

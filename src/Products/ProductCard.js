@@ -1,10 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './ProductCard.css';
 
-function ProductCard({ product, onPriceChange }) {
+function ProductCard({ product, onPriceChange,resetTrigger }) {
     const handleChange = (event) => {
         onPriceChange(product.barCode, event.target.value);
     };
+    useEffect(() => {
+     product.newPrice='';
+    }, [resetTrigger]);
 
     return (
         <div className="product-container">
@@ -38,7 +42,7 @@ function ProductCard({ product, onPriceChange }) {
             :
              <div className="suplier-request-card-status-orange" />
             }
-            <input 
+            <input className="suplier-product-card-input"
                 placeholder='Оновлена ціна'
                 value={product.newPrice || ''}
                 onChange={handleChange}

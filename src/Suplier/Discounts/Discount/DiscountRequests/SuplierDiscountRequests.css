@@ -1,0 +1,104 @@
+.suplier-discount-request-list-comment{
+    display: flex;
+    justify-content: center;
+    width: 7vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.suplier-discount-request-list-name{
+    display: flex;
+    justify-content: center;
+    width: 12vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading-spinner::after {
+    content: " ";
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000000;
+    border-color: #000000 transparent #000000 transparent;
+    animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.suplier-discount-request-list-trademark{
+    display: flex;
+    justify-content: center;
+    width: 8vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.suplier-discount-request-list-adress
+{
+    display: flex;
+    justify-content: center;
+    width: 18vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.suplier-discount-request-list-adresscomment
+{
+    display: flex;
+    justify-content: center;
+    width: 8vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.suplier-discount-request-list-price{
+    display: flex;
+    justify-content: center;
+    width: 6vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.suplier-discount-request-list-status
+{
+    display: flex;
+    justify-content: center;
+    width: 4vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.suplier-discount-request-list-date{
+    
+    display: flex;
+    justify-content: center;
+    width: 6vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}

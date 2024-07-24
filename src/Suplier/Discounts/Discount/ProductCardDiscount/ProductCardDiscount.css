@@ -1,0 +1,68 @@
+.productcard-container {
+    display: flex;
+    margin-top: 2vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+
+}
+
+.productcard-item {
+    width: 9.5vw;    
+    border: 0.2vh solid black;
+    font-size: 1vw;
+    font-weight: 500;
+   
+}
+.productcard-item-compensation{
+    width: 11.5vw;    
+    border: 0.2vh solid black;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.productcard-price {
+    border: 0.2vh solid black;
+    display: flex;
+    width: 6.5vw;  
+    font-size: 1vw;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.productcard-name-discount {
+    border: 0.2vh solid black;
+    width: 23.5vw;
+    margin-left: 0.5vw;
+    font-size: 1vw;
+    font-weight: 500;
+    
+}
+
+.productcard-input {
+    width: 8vw;
+    margin-top: 0.5vw;
+    height: 1vh;  /* Increased height for input fields */
+    font-size: 1vw;  /* Ensure text is proportionally larger */
+    padding: 0.5vw;
+}
+
+.productcard-label {
+    font-size: 0.9vw;
+    font-weight: bold;
+}
+
+.productcard-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1vw;
+}
+
+.productcard-input-error {
+    color: red;
+    font-size: 0.9vw;
+    font-weight: bold;
+}

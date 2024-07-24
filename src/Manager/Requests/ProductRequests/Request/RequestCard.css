@@ -1,0 +1,66 @@
+.manager-button-approve
+{
+    height: 5vh;
+    width: 3vw;
+    border-radius: 10vh;
+    margin-left: 0.2vw;
+    display: flex;
+    align-self: center;
+    align-items: center ;
+    justify-self: center;
+    justify-content: center;
+    background-color: green;
+}
+.manager-button-reject
+{
+    height: 5vh;
+    width: 3vw;
+    border-radius: 10vh;
+    display: flex;
+    align-self: center;
+    align-items: center ;
+    justify-self: center;
+    justify-content: center;
+    margin-left: 0.2vw;
+    background-color: red;
+}
+
+.manager-request-comment{
+    width: 11vw;
+}
+.check{
+    color: white;
+}
+.percent-line{ 
+    color:red;
+    width: 10vw;
+    font-size: 1vw;
+    font-weight:500;
+        display: flex;
+        border: 0.2vh solid black;
+
+    justify-content: center;
+}
+.manager-request-item-name{
+    width: 20vw;
+    font-size: 1vw;
+    font-weight:500;
+    border: 0.2vh solid black;
+
+ 
+}
+.manager-request-buttons-container{
+    display: flex;
+    border-bottom:  0.2vh solid black;
+    justify-content: center;
+}
+
+.manager-request-item
+{
+    border: 0.2vh solid black;
+
+    width: 10vw;
+    font-size: 1vw;
+    font-weight:500;
+  
+}

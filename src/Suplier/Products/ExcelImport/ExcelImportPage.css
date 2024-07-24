@@ -1,0 +1,70 @@
+.allproducts-info-icon {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.excel-submit-button {
+    width: 20vw;
+    height: 5vh;
+    color: white;
+    font-weight: bold;
+    margin-left: 40vw;
+    font-size: 2vh;
+    background-color: green;
+    z-index: 1;
+}
+
+.aprove {
+    z-index: 3;
+}
+.suplier-excel-product-list-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top */
+    background-color: lightgray; /* Same background color as the product list to blend in */
+    z-index: 1; /* Ensure it is above the product list */
+}
+.suplier-excel-product-list-text {
+    width: 7.9vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    
+    align-self: center;
+    justify-self: center;
+}
+.suplier-excel-product-list-newprice{
+    width: 8vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    
+    align-self: center;
+    justify-self: center;
+}
+.suplier-excel-product-list-status{
+    width: 10vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    
+    align-self: center;
+    justify-self: center;
+}
+
+.suplier-excel-product-list-name {
+    width: 49.65vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+    height: 4vh;
+    font-weight: 500;
+    align-self: center;
+    justify-self: center;
+}

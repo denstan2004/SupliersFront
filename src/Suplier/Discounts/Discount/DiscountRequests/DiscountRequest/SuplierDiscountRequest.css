@@ -1,0 +1,95 @@
+.suplier-discount-card-comment{
+    
+    width: 2vw;
+    display: flex;
+        justify-content: center;
+    font-size: 2vh;
+
+}
+.suplier-discount-card-status{
+    width: 4vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+
+}
+    .suplier-discount-card-status-green {
+        color: green;
+        font-weight: bold;
+        width: 4vw;
+        border: 0.2vh solid black ;   
+        z-index: 100;
+        height: 100%;
+
+    }
+
+    .suplier-discount-card-status-orange {
+        color: orange;
+        font-weight: bold;
+        border: 0.2vh solid black;   
+        height: 100%;
+
+        width: 4vw;
+
+    }
+
+
+    .suplier-discount-card-status-red {
+        color: red;
+        font-weight: bold;
+        width: 4vw;
+        height: 100%;
+        border: 0.2vh solid black; 
+        display: flex;  
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+    .suplier-discount-card-name{
+        border: 0.2vh solid black;
+        font-size: 1vw;
+        width: 12vw;
+    }
+    .suplier-discount-card-trademark{
+        border: 0.2vh solid black;
+        font-size: 1vw;
+        width: 8vw;
+        text-wrap: balance;    }
+    .suplier-discount-card-adress{
+        border: 0.2vh solid black;
+        font-size: 1vw;
+        width: 18vw;
+        display: flex;
+        justify-content: center;
+    }
+    .suplier-discount-card-adresscomment{
+        border: 0.2vh solid black;
+        font-size: 1vw;
+        width: 8vw;
+    }
+    .suplier-discount-card-price{
+        border: 0.2vh solid black;
+        font-size: 1vw;
+        width: 6vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .suplier-discount-card-date{
+        border: 0.2vh solid black;
+        font-size: 1vw;
+        width: 6vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .suplier-discount-card-comment{
+        border: 0.2vh solid black;
+        font-size: 0.8vw;
+        width: 7vw;
+        display: flex;   
+    }
+    .suplier-request-card-item-option{
+        width: 100%;
+    }

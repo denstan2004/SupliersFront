@@ -1,0 +1,63 @@
+.requests-list
+{
+    margin-top: 1vw;
+}
+
+.requests-button-approve-all {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.suplier-product-list-container{
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top */
+    background-color: lightgray; /* Same background color as the product list to blend in */
+    z-index: 1; /* Ensure it is above the product list */
+}
+.manager-request-list-name{
+    width: 20vw;
+    font-size: 1vw;
+    font-weight:500;
+    border: 0.2vh solid black;
+    display: flex;
+    justify-content: center;
+}
+.manager-request-list-text{
+    width: 10vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+
+    font-weight:500;
+    display: flex;
+    justify-content: center;
+}
+.manager-request-list-comment{
+    width: 19.1vw;
+    font-size: 1vw;
+    border: 0.2vh solid black;
+
+    font-weight:500;
+    display: flex;
+    justify-content: center;
+}
+.requests-button-reject-all {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.requests-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.requests-select {
+    height: 5vh;
+}

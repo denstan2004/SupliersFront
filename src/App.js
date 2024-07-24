@@ -21,13 +21,26 @@ function App() {
     .then(response => {
        if (response.status === 200) {
         console.log(response);
-        if(response.data.message=="suplier")
-          {console.log("sup")
-          navigate("/choose");}
-        else if(response.data.message=="manager") 
-          navigate("/manager/choose")
+        if(response.data.status==false)
+        {
+          console.log(response.data.textState);
         }
-    })
+        else{
+         
+
+          if(response.data.data.isSupplier===false)
+          {
+            navigate("/manager/choose")
+          }
+          else
+          {
+            navigate("/choose");
+          }
+
+          }
+        }
+      }
+    )
     .catch(error => {
       console.error('There was an error!', error);
     });

@@ -1,15 +1,15 @@
     import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './App'; // Головний компонент
-import SuplierProducts from './Suplier/SuplierProducts';
-import SuplierRequests from './Requests/SuplierRequests';
-import ExcelImportPage from './ExcelImport/ExcelImportPage'
-import Requests from './Manager/Requests/Requests';
+import SuplierProducts from './Suplier/Products/SuplierProducts';
+import SuplierRequests from './Suplier/Products/ProductRequestsHistory/Requests/SuplierRequests';    ///Requests/SuplierRequests
+import ExcelImportPage from './Suplier/Products/ExcelImport/ExcelImportPage'
+import Requests from './Manager/Requests/ProductRequests/Requests'; //./Manager/Requests/Requests
 import ChoosePage from './ChoosePage/ChoosePage';
-import AllProducts from './Discount/AllProducts'
+import AllProducts from './Suplier/Discounts/Discount/AllProducts' ///Suplier/Discount/AllProducts
 import ManagerChoosePage from './ChoosePage/ManagerChoosePage';
-import DiscountRequests from './Manager/Requests/Discount/DiscountRequests';
-import SuplierDiscountRequests from './Discount/DiscountRequests/SuplierDiscountRequests';
+import DiscountRequests from './Manager/Requests/DiscountRequests/DiscountRequests'; //./Manager/Requests/Discount/DiscountRequests
+import SuplierDiscountRequests from './Suplier/Discounts/Discount/DiscountRequests/SuplierDiscountRequests'; //./Discount/DiscountRequests/SuplierDiscountRequests
 ///suplier/discount/requests
 const AppRouter = () => {
   return (

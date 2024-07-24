@@ -1,0 +1,93 @@
+.discount-request-list-name{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    border: 0.2vh solid black;
+    font-weight: bold;
+}
+.discount-request-list-groupname{
+    width: 8.3vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    border: 0.2vh solid black;
+    font-weight: bold;
+}
+
+.discount-product-list-container{
+    display: flex;
+    flex-direction: row;
+    width: 99vw;
+    background-color: lightgrey;    
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1; /* Ensure it is above the product list */
+}
+.discount-request-list-adress-comment{
+    width: 6vw;
+    border: 0.2vh solid black;
+
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    font-weight: bold;  
+}
+.discount-request-list-adress{
+    border: 0.2vh solid black;
+
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    font-weight: bold;  
+}
+.discount-request-list-price{
+    width: 7vw;
+        border: 0.2vh solid black;
+    
+    font-size: 2vh  ;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+
+}
+.discount-requests-container{
+    background-color: lightgray;
+}
+.discount-request-list-trademark{
+    border: 0.2vh solid black;
+
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    font-weight: bold;
+
+}
+.discount-request-list-date{
+    display: flex;
+    justify-content: center;
+    border: 0.2vh solid black;
+
+    width: 6vw;
+    font-size: 2vh;
+    font-weight: bold;
+
+}
+.discount-request-list-comment{
+    display: flex;
+    justify-content: center;
+    width: 17.5vw;
+    border: 0.2vh solid black;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
+.discount-request-list-status{
+    display: flex;
+    justify-content: center;
+ 
+    font-size: 2vh;
+    font-weight: bold;
+}

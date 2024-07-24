@@ -28,8 +28,8 @@ function ProductCardExcel({ product }) {
                 product.status === "Pennding" 
                 ? "suplier-request-card-status-orange" 
                 : product.status === "Approved"
-                ? "suplier-request-card-status-green"
-                : "suplier-request-card-status-red"
+                ? "suplier-request-card-status-red"
+                : " suplier-request-card-status-green"
             }>
                 {product.status}
             </div>  
