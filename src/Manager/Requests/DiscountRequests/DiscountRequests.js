@@ -37,7 +37,7 @@ function DiscountRequests() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('https://localhost:7184/api/Discount/GetAll/Discount/Request/', {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/Discount/GetAllRequest/Manager`, {
                 withCredentials: true
             });
 

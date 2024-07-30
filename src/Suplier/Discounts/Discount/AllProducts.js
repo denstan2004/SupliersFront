@@ -43,7 +43,7 @@ const setmessagefunc = (message) => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('https://localhost:7184/api/Positions/GetAll', {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/Supplyer/Positions/GetAll`, {
                 withCredentials: true
             });
             if (response.status === 200) {
@@ -65,7 +65,7 @@ const setmessagefunc = (message) => {
 
     const fetchDiscountPeriods = async () => {
         try {
-            const response = await axios.get('https://localhost:7184/api/Discount/GetAll/Discount/Time', {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/Discount/GetAll/Time`, {
                 withCredentials: true
             });
             if (response.status === 200) {
@@ -85,7 +85,7 @@ const setmessagefunc = (message) => {
 
     const fetchDiscountAdresses = async () => {
         try {
-            const response = await axios.get('https://localhost:7184/api/Discount/GetAll/Discounts/Adress', {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/Discount/GetAll/Adress`, {
                 withCredentials: true
             });
             if (response.status === 200) {
@@ -178,9 +178,8 @@ const setmessagefunc = (message) => {
             DiscountNumber,
             discountPositions
         };
-
         try {   
-            const response = await axios.post('https://localhost:7184/api/Discount/Create', payload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Discount/Create/Suplier`, payload, {
                 withCredentials: true
             });
             if (response.status === 200) {
@@ -209,8 +208,10 @@ const setmessagefunc = (message) => {
         return adresses.map(adress => `${adress.name}, ${adress.adress}`).join('\n');
     };
 
+    const prefix = localStorage.getItem("front-prefix") || '';
+
     const handleDiscountRequestNavigate = () => {
-        navigate("/suplier/discount/requests")
+        navigate(`/${prefix}/suplier/discount/requests`);
     }
 
     const formatDate = (dateString) => {

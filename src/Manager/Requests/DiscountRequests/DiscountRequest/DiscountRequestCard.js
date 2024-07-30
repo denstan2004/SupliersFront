@@ -14,9 +14,8 @@ function DiscountRequestCard ({request,removeRequest,setmessagefunc}){
             codewares: request.suplierPostition.codeWares,
             number: request.adressModel.number
         };
-
         try {
-            const response = await axios.post('https://localhost:7184/api/Discount/Update/status', requestPayload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Discount/Update/status/Manager`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

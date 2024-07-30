@@ -34,7 +34,7 @@ function Requests() {
 
     const fetchRequests = async () => {
         try {
-            const response = await axios.get('https://localhost:7184/api/Request/GetAll', {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/Supplyer/Request/GetAll`, {
                 withCredentials: true
             });
 
@@ -88,7 +88,7 @@ function Requests() {
         };
 
         try {
-            const response = await axios.post('https://localhost:7184/api/Request/Update', requestPayload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Supplyer/Request/Update`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

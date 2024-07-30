@@ -16,7 +16,7 @@ function SuplierDiscountRequests() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get("https://localhost:7184/api/Discount/GetAllRequests/Suplier", {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/Discount/GetAllRequests/Suplier`, {
                 withCredentials: true
             });
             console.log(response);

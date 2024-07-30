@@ -4,13 +4,15 @@ import "./ChoosePage.css"
 function ChoosePage(){
     const navigate = useNavigate();
 
-    const HandleNavigateUpdate = () => {
-        navigate("/suplier/pruducts");
-    }
+    const prefix = localStorage.getItem("front-prefix") || '';
 
-    const HandleNavigateDiscount = () => {
-        navigate("/suplier/discounts");
-    }
+const HandleNavigateUpdate = () => {
+    navigate(`/${prefix}/suplier/products`);
+}
+
+const HandleNavigateDiscount = () => {
+    navigate(`/${prefix}/suplier/discounts`);
+}
 
     return(
         <div className="choose-page-container">

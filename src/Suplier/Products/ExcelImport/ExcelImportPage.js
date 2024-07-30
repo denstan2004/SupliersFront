@@ -163,8 +163,9 @@ function ExcelParser() {
             setMessage("Дата початку має бути мінімум через тиждень від сьогоднішнього дня");
             return;
         }
+        console.log(123)
         try {
-            const response = await axios.post('https://localhost:7184/Create/Changes', requestPayload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Supplyer/Positions/Create/Changes`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

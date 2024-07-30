@@ -19,9 +19,8 @@ function SupplierProducts() {
     useEffect(() => {
         fetchProducts();
     }, []);
-
     const fetchProducts = async () => {
-        axios.get('https://localhost:7184/api/Positions/GetAll', {
+        axios.get(`${localStorage.getItem("back-prefix")}/Supplyer/Positions/GetAll`, {
             withCredentials: true 
         })
         .then(response => {
@@ -67,12 +66,14 @@ function SupplierProducts() {
         console.log(selectedDate);
     };
 
+    const prefix = localStorage.getItem("front-prefix") || '';
+
     const handleNavigate = () => {
-        navigate('/import', { state: { products } });
+        navigate(`/${prefix}/import`, { state: { products } });
     };
 
     const handleNavigateRequest = () => {
-        navigate('/suplier/requests', { state: { products } });
+        navigate(`/${prefix}/suplier/requests`, { state: { products } });
     };
 
     const handleSubmit = async () => {
@@ -98,9 +99,8 @@ function SupplierProducts() {
             setMessage("Дата початку має бути мінімум через тиждень від сьогоднішнього дня");
             return;
         }
-
         try {
-            const response = await axios.post('https://localhost:7184/Create/Changes', requestPayload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Supplyer/Positions/Create/Changes`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
