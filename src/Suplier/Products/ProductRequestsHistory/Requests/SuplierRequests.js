@@ -6,23 +6,42 @@ import './SuplierRequests.css';
 
 function SuplierRequests() {
     const [requests, setRequests] = useState([]);
+    const [uniqueTrademarks, setUniqueTrademarks] = useState([]);
+    const [selectedTrademark, setSelectedTrademark] = useState('all');
     const location = useLocation();
     const { products } = location.state || {};
-
+    
     useEffect(() => {
         fetchProducts();
+        extractUniqueTrademarks(requests);
     }, []);
+    const extractUniqueTrademarks = (requests) => {
+        console.log(requests)
+        const trademarks = requests.map(request => request.nameBrand);
+        const uniqueTrademarks = ['all', ...new Set(trademarks)];
+        setUniqueTrademarks(uniqueTrademarks);
+    };
 
     const fetchProducts = async () => {
         setRequests(products.filter((req) => req.updatedPrice !== 0));
+
+    };
+    const handleTrademarkChange = (event) => {
+        setSelectedTrademark(event.target.value);
     };
 
     useEffect(() => {
         console.log(requests);
     }, [requests]);
+    const filteredProducts = selectedTrademark === 'all' ? requests : requests.filter(request => request.nameBrand === selectedTrademark);
 
     return (
         <div>
+            <select className="suplier-select" value={selectedTrademark} onChange={handleTrademarkChange}>
+                        {uniqueTrademarks.map(trademark => (
+                            <option key={trademark} value={trademark}>{trademark}</option>
+                        ))}
+                    </select>
             <div className='suplier-product-list-container'>
                 <div className='suplier-request-list-name'>Назва</div>
                 <div className='suplier-request-list-text'>Код</div>
@@ -35,7 +54,7 @@ function SuplierRequests() {
             </div>
             {requests.length > 0 ?
                 <div>
-                    {requests.map((request, index) => (
+                    {filteredProducts.map((request, index) => (
                         <RequestCard key={index} request={request} />
                     ))}
                 </div>

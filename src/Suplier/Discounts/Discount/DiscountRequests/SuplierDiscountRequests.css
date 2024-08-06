@@ -34,7 +34,28 @@
     border-color: #000000 transparent #000000 transparent;
     animation: spinner 1.2s linear infinite;
 }
+.filters select {
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 16px; /* Збільшує розмір шрифту */
+    border-radius: 5px; /* Закруглені краї */
+    border: 1px solid #ccc; /* Світло-сіра рамка */
+    background-color: #f9f9f9; /* Світло-сірий фон */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none; /* Відключити стандартний вигляд випадаючого списку */
+    cursor: pointer; /* Курсор руки при наведенні */
+}
 
+.filters select:focus {
+    border-color: #007bff; /* Синя рамка при фокусі */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Блакитний тінь при фокусі */
+    outline: none; /* Вимкнути стандартний контур */
+}
+
+.filters select option {
+    font-size: 16px; /* Збільшує розмір шрифту в опціях */
+    padding: 10px; /* Додає відступи до опцій */
+}
 @keyframes spinner {
     0% {
         transform: rotate(0deg);
