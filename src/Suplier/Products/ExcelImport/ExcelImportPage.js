@@ -37,7 +37,7 @@ function ExcelParser() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('https://localhost:7184/api/Positions/GetAll', {
+            const response = await axios.get(`${localStorage.getItem("back-prefix")}/api/Positions/GetAll`, {
                 withCredentials: true 
             });
 

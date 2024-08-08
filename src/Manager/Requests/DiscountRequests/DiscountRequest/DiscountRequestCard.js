@@ -12,9 +12,10 @@ function DiscountRequestCard ({request,removeRequest,setmessagefunc}){
             status: "Accepted",
             comment: comment,
             codewares: request.suplierPostition.codeWares,
-            number: request.adressModel.number
+            number: request.discountPeriods.number
         };
         try {
+            console.log(requestPayload)
             const response = await axios.post(`${localStorage.getItem("back-prefix")}/Discount/Update/status/Manager`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
@@ -49,11 +50,11 @@ function DiscountRequestCard ({request,removeRequest,setmessagefunc}){
             status: "Rejected",
             comment: comment,
             codewares: request.suplierPostition.codeWares,
-            number: request.adressModel.number
+            number: request.discountPeriods.number
         };
 
         try {
-            const response = await axios.post('https://localhost:7184/api/Discount/Update/status', requestPayload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Discount/Update/status/Manager`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -97,7 +98,11 @@ function DiscountRequestCard ({request,removeRequest,setmessagefunc}){
             <div className="discount-card-group-name">{request.suplierPostition.groupName}</div>
             <div className="discount-card-trademark">{request.suplierPostition.nameBrand}</div>
     
-            <div className="discount-card-adress">{request.adressModel.name}</div>
+            <div className="suplier-discount-card-adress">
+                {request.adressModel.map((adress, index) => (
+                   <div key={index}>{adress.name}</div>
+                ))}
+            </div>  
             <div className="discount-card-adress-comment">{request.discountPeriods.comment}</div>
             <div className="discount-card-price">{request.discountPrice}</div>
             <div className="discount-card-price">{request.discountInitPrice}</div>

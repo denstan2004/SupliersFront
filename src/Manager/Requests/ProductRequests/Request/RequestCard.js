@@ -52,7 +52,7 @@ function RequestCard({ request, removeRequest, setmessagefunc}) {
         };
 
         try {
-            const response = await axios.post('https://localhost:7184/api/Request/Update', requestPayload, {
+            const response = await axios.post(`${localStorage.getItem("back-prefix")}/Supplyer/Request/Update`, requestPayload, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

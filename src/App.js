@@ -9,7 +9,7 @@ function App() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  localStorage.setItem("back-prefix", "https://localhost:59527/api/Spar");
+  localStorage.setItem("back-prefix", "https://apitest.spar.uz.ua/api/Spar");
   localStorage.setItem("front-prefix", "vopak/uzhorod");
 
   const HandleLogin = () => {
@@ -17,8 +17,11 @@ function App() {
       login: login,
       password: password
     }, { withCredentials: true })
-      .then(response => {
+      .then(response => { 
         if (response.status === 200) {
+          axios.get(`${localStorage.getItem("back-prefix")}/Check/Auth`, {
+            withCredentials: true 
+        }).then(respon => {console.log(respon)});
           console.log(response);
           if (response.data.status === false) {
             console.log(response.data.textState);

@@ -1,13 +1,12 @@
 .discount-request-list-name{
-    width: 10vw;
-    display: flex;
+    width: 9.8vw;    display: flex;
     justify-content: center;
     font-size: 2vh;
     border: 0.2vh solid black;
     font-weight: bold;
 }
 .discount-request-list-groupname{
-    width: 8.3vw;
+    width: 7.8vw;
     display: flex;
     justify-content: center;
     font-size: 2vh;
@@ -18,7 +17,7 @@
 .discount-product-list-container{
     display: flex;
     flex-direction: row;
-    width: 99vw;
+    width: 100vw;
     background-color: lightgrey;    
     position: sticky; /* Make the header sticky */
     top: 0; /* Stick to the top */
@@ -36,7 +35,7 @@
 .discount-request-list-adress{
     border: 0.2vh solid black;
 
-    width: 15vw;
+    width: 18vw;
     display: flex;
     justify-content: center;
     font-size: 2vh;
@@ -44,9 +43,8 @@
 }
 .discount-request-list-price{
     width: 7vw;
-        border: 0.2vh solid black;
-    
-    font-size: 2vh  ;
+    border: 0.2vh solid black;    
+    font-size: 2vh;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -58,7 +56,7 @@
 .discount-request-list-trademark{
     border: 0.2vh solid black;
 
-    width: 7vw;
+    width: 6.8vw;
     display: flex;
     justify-content: center;
     font-size: 2vh;

@@ -17,7 +17,10 @@ function SupplierProducts() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        console.log(`${localStorage.getItem("back-prefix")}/Supplyer/Positions/GetAll`)
+
         fetchProducts();
+        
     }, []);
     const fetchProducts = async () => {
         axios.get(`${localStorage.getItem("back-prefix")}/Supplyer/Positions/GetAll`, {
@@ -158,7 +161,7 @@ function SupplierProducts() {
                 </div>
                 <div className="supier-product-list">
                     {filteredProducts.map(product => (
-                        <ProductCard key={product.id} product={product} resetTrigger={resetTrigger} onPriceChange={handlePriceChange} />
+                        <ProductCard key={product.id} product={product}  resetTrigger={resetTrigger} onPriceChange={handlePriceChange} />
                     ))}
                 </div>
             </div>
