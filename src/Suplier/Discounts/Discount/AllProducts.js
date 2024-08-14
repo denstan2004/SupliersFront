@@ -211,7 +211,7 @@ const setmessagefunc = (message) => {
     const prefix = localStorage.getItem("front-prefix") || '';
 
     const handleDiscountRequestNavigate = () => {
-        navigate(`/${prefix}/suplier/discount/requests`);
+        navigate(`/suplier/discount/requests`);
     }
 
     const formatDate = (dateString) => {

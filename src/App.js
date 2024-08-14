@@ -10,7 +10,6 @@ function App() {
   const navigate = useNavigate();
 
   localStorage.setItem("back-prefix", "https://apitest.spar.uz.ua/api/Spar");
-  localStorage.setItem("front-prefix", "vopak/uzhorod");
 
   const HandleLogin = () => {
     axios.post(`${localStorage.getItem("back-prefix")}/Login`, {

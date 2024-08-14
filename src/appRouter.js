@@ -10,28 +10,26 @@ import AllProducts from './Suplier/Discounts/Discount/AllProducts';
 import ManagerChoosePage from './ChoosePage/ManagerChoosePage';
 import DiscountRequests from './Manager/Requests/DiscountRequests/DiscountRequests';
 import SuplierDiscountRequests from './Suplier/Discounts/Discount/DiscountRequests/SuplierDiscountRequests';
-
+import Reports from './ZNP-reports/reports';
 const AppRouter = () => {
-  const prefix = "vopak/uzhorod";
 
   return (
     <Router>
       <Routes>
-        <Route path={`${prefix}/suplier/discounts`} element={<AllProducts />} />
-        <Route path={`${prefix}/manager/requests`} element={<Requests />} />
-        <Route path={`${prefix}/manager/requests/discounts`} element={<DiscountRequests />} />
-        <Route path={`${prefix}/suplier/discount/requests`} element={<SuplierDiscountRequests />} />
-        <Route path={`${prefix}/suplier/products`} element={<SuplierProducts />} />
-        <Route path={`${prefix}/import`} element={<ExcelImportPage />} />
-        <Route path={`${prefix}/suplier/requests`} element={<SuplierRequests />} />
-        <Route path={`${prefix}/choose`} element={<ChoosePage />} />
-        <Route path={`${prefix}/manager/choose`} element={<ManagerChoosePage />} />
-
+        <Route path={`/suplier/discounts`} element={<AllProducts />} />
+        <Route path={`/manager/requests`} element={<Requests />} />
+        <Route path={`/manager/requests/discounts`} element={<DiscountRequests />} />
+        <Route path={`/suplier/discount/requests`} element={<SuplierDiscountRequests />} />
+        <Route path={`/suplier/products`} element={<SuplierProducts />} />
+        <Route path={`/import`} element={<ExcelImportPage />} />
+        <Route path={`/suplier/requests`} element={<SuplierRequests />} />
+        <Route path={`/choose`} element={<ChoosePage />} />
+        <Route path={`/manager/choose`} element={<ManagerChoosePage />} />
+        <Route path={`/reports`} element={<Reports />} />
         {/* Default route to App component */}
-        <Route path={`${prefix}/`} element={<App />} />
+        <Route path={`/`} element={<App />} />
         
         {/* Redirect to default route if no match is found */}
-        <Route path="*" element={<Navigate to={`${prefix}/`} replace />} />
       </Routes>
     </Router>
   );

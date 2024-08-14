@@ -72,11 +72,11 @@ function SupplierProducts() {
     const prefix = localStorage.getItem("front-prefix") || '';
 
     const handleNavigate = () => {
-        navigate(`/${prefix}/import`, { state: { products } });
+        navigate(`/import`, { state: { products } });
     };
 
     const handleNavigateRequest = () => {
-        navigate(`/${prefix}/suplier/requests`, { state: { products } });
+        navigate(`/suplier/requests`, { state: { products } });
     };
 
     const handleSubmit = async () => {

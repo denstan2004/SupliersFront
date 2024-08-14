@@ -4,14 +4,13 @@ import "./ChoosePage.css"
 function ChoosePage(){
     const navigate = useNavigate();
 
-    const prefix = localStorage.getItem("front-prefix") || '';
 
 const HandleNavigateUpdate = () => {
-    navigate(`/${prefix}/suplier/products`);
+    navigate(`/suplier/products`);
 }
 
 const HandleNavigateDiscount = () => {
-    navigate(`/${prefix}/suplier/discounts`);
+    navigate(`/suplier/discounts`);
 }
 
     return(
@@ -22,6 +21,7 @@ const HandleNavigateDiscount = () => {
             <button onClick={HandleNavigateDiscount} className="choose-page-button">
                 Додати акцію
             </button>
+            
         </div>
     )
 }

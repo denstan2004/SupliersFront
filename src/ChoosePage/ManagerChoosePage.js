@@ -6,11 +6,11 @@ function ManagerChoosePage(){
     const prefix = localStorage.getItem("front-prefix") || '';
 
     const HandleNavigateUpdate = () => {
-        navigate(`/${prefix}/manager/requests/discounts`);
+        navigate(`/manager/requests/discounts`);
     }
 
     const HandleNavigateDiscount = () => {
-        navigate(`/${prefix}/manager/requests`);
+        navigate(`/manager/requests`);
     }
 
     return(
