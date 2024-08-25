@@ -15,7 +15,7 @@ function Reports(){
                 Login: "Dstanislav",
                 PassWord: "d15012004"
             }
-            axios.post("http://api.spar.uz.ua/znp", payload, {
+            axios.post("https://apitest.spar.uz.ua/znp", payload, {
                 withCredentials: true 
             })
                 .then(response => {

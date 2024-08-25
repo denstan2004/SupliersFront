@@ -56,7 +56,7 @@ function ReportParams({ reportparams, allreportParam, codereport }) {
             Parameters: paramArray // Use the array format
         };
 
-        axios.post("http://api.spar.uz.ua/znp", payload, {
+        axios.post("https://apitest.spar.uz.ua/znp", payload, {
             withCredentials: true 
         }).then(response => {
             console.log(response.data);
