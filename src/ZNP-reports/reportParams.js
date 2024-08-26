@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SingleParam from "./SingleParam";
 
-function ReportParams({ reportparams, allreportParam, codereport }) {
+function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
     const [paramName, setParamData] = useState({});
     const [paramValuesMap, setParamValuesMap] = useState(new Map()); // Мапа для збереження значень
 
     useEffect(() => {
         setParamValuesMap(new Map());
-        if (reportparams !== null && reportparams !== undefined) {
+        if (reportparams[0] !== '' && reportparams !== undefined) {
             let newParamData = {};  // Копіюємо попередні значення
+            console.log(reportparams)
             const jsonValue = {
                 "State": 0,
                 "LispParam": [
@@ -60,9 +61,12 @@ function ReportParams({ reportparams, allreportParam, codereport }) {
             withCredentials: true 
         }).then(response => {
             console.log(response.data);
+            setTable(response.data);
         });
         
-        console.log(payload);
+       
+        
+      
     };
 
     useEffect(() => {

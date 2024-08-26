@@ -1,0 +1,47 @@
+.report-table-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.report-table-header-segment{
+    flex: 1; 
+    text-align: center;
+    flex-wrap: wrap;
+}
+.report-table-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.report-table-body-segment{
+    flex: 1; 
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.report-table-body {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+}
+
+.report-table-row {
+    display: flex;
+    flex-direction: row; /* Display cells in a row */
+    justify-content: space-between; /* Evenly space the cells in each row */
+    width: 100%;
+    border-bottom: 1px solid #ccc; /* Optional: Add a border between rows */
+}
+
+.report-table-cell {
+    flex: 1; /* Make each cell take up equal space */
+    text-align: center; /* Center the text in the cell */
+    padding: 8px; /* Optional: Add padding to each cell */
+    border-right: 1px solid #ccc; /* Optional: Add a border between cells */
+}
+
+.report-table-row:last-child .report-table-cell {
+    border-right: none; /* Remove the right border from the last cell in the row */
+}
