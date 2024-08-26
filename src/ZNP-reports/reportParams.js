@@ -30,7 +30,17 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
                     if (param === "date_begin" || param === "date_end") {
                         newParamData[param] = "date";
                     } else {
-                        newParamData[param] = jsonValue;
+                        const payload = {
+                            CodeData: 21,
+                            ParamName: param 
+                        };
+                        axios.post("https://apitest.spar.uz.ua/znp", payload, {
+                            withCredentials: true 
+                             }).then(response => {
+                                       console.log(response.data);
+                                       newParamData[param] =response.data;
+                             });
+                        
                     }
                 }
             });
@@ -48,7 +58,7 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
     };
 
     const ButtonClick = () => {
-        // Convert the Map to an array of arrays
+        // перетворюємо мапу в масив масивів з двух елементів ключ- значення
         const paramArray = Array.from(paramValuesMap.entries());
 
         const payload = {
