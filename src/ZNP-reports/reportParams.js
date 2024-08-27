@@ -38,8 +38,10 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
                             withCredentials: true 
                              }).then(response => {
                                        console.log(response.data);
-                                       newParamData[param] =response.data;
+                                       newParamData[param] =response.data.LispParam;
                              });
+                             //newParamData[param]=jsonValue
+
                         
                             
                     }
