@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function SingleParam({ paramName, listParams, allreportParam, onValueChange }) {
     const [selectedValue, setSelectedValue] = useState("");
-    console.log(paramName);// один із параметрів звіту наприклад codewares з можливих одного і більше параметрів
-    console.log(listParams) // данні які містить нащ умовний codewares
-    console.log(allreportParam) // всі можливі варіанти параметрів
-    // onValueChange призначенні для зміни 
+    const [searchTerm, setSearchTerm] = useState(""); // State to store search term
+    const [filteredParams, setFilteredParams] = useState([]);
+
+    useEffect(() => {
+        // Set the first element as the selected value when the component loads
+        if (Array.isArray(listParams?.LispParam) && listParams.LispParam.length > 0) {
+            setSelectedValue(listParams.LispParam[0][0]);
+            onValueChange(paramName, listParams.LispParam[0][0]);
+            setFilteredParams(listParams.LispParam);
+        }
+    }, [listParams, paramName, onValueChange]);
+
+    useEffect(() => {
+        // Filter the list based on the search term
+        if (Array.isArray(listParams?.LispParam)) {
+            const filtered = listParams.LispParam.filter(item =>
+                item[1].toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setFilteredParams(filtered);
+        }
+    }, [searchTerm, listParams]);
 
     let paramFormat;
     let Name;
@@ -18,27 +35,30 @@ function SingleParam({ paramName, listParams, allreportParam, onValueChange }) {
     });
 
     const handleChange = (event) => {
-        const value = event.target.value;// Одне з вибраних значень codewares наприклад lubo....
-        
+        const value = event.target.value;
         setSelectedValue(value);
-        onValueChange(paramName, event.target.value); 
+        onValueChange(paramName, value);
     };
 
     return (
         <div>
             <h3>{Name}</h3>
             {paramFormat === "list" ? (
-                <select value={selectedValue} onChange={handleChange}>
-                    {Array.isArray(listParams.LispParam) ? (
-                        listParams.LispParam.map((item, index) => (
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <select value={selectedValue} onChange={handleChange}>
+                        {filteredParams.map((item, index) => (
                             <option key={index} value={item[0]}>
-                                {item[1]} {/* Відображаємо другий елемент масиву */}
+                                {item[1]} {/* Display the second element */}
                             </option>
-                        ))
-                    ) : (
-                        <option disabled>Невірний формат даних</option>
-                    )}
-                </select>
+                        ))}
+                    </select>
+                </div>
             ) : paramFormat === "date" ? (
                 <input
                     type="date"
