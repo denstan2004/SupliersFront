@@ -7,50 +7,37 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
     const [paramValuesMap, setParamValuesMap] = useState(new Map()); // Мапа для збереження значень
 
     useEffect(() => {
-        console.log(reportparams);
-        setParamValuesMap(new Map());
-        if (reportparams[0] !== '' && reportparams !== undefined) {
-            let newParamData = {};  
-            const jsonValue = {
-                "State": 0,
-                "LispParam": [
-                    [166, "Lubo FoodToGo"],
-                    [169, "Lubo М'ясний Цех"],
-                    [167, "Lubo Пекарський Цех"],
-                    [168, "Lubo Піцерія"],
-                    [
-                        74,
-                        "Берегово Піцерія"
-                    ]
-                ]
-            };
-
-            reportparams.forEach(param => {
-                if (param !== "") {
+        setParamData({});
+        if (reportparams.length > 0 && reportparams[0] !== '') {
+            let newParamData = {};
+    
+            // Виконати запити для кожного параметру
+            const fetchParamData = async () => {
+                for (const param of reportparams) {
                     if (param === "date_begin" || param === "date_end") {
                         newParamData[param] = "date";
                     } else {
-                        const payload = {
-                            CodeData: 21,
-                            ParamName: param 
-                        };
-                        axios.post("https://apitest.spar.uz.ua/znp", payload, {
-                            withCredentials: true 
-                             }).then(response => {
-                                       console.log(response.data);
-                                       newParamData[param] =response.data;
-                             });
-                            // newParamData[param]=jsonValue
-
-                        
-                            
+                        try {
+                            const payload = {
+                                CodeData: 21,
+                                ParamName: param 
+                            };
+                            const response = await axios.post("https://apitest.spar.uz.ua/znp", payload, {
+                                withCredentials: true 
+                            });
+                            newParamData[param] = response.data;
+                        } catch (error) {
+                            console.error("Помилка при отриманні даних параметру:", error);
+                        }
                     }
                 }
-            });
-            setParamData(newParamData);
+                setParamData(newParamData);
+            };
+    
+            fetchParamData();
         }
-        
     }, [reportparams]);
+    
 
     const handleValueChange = (name, paramCode) => {
         setParamValuesMap(prevMap => {
