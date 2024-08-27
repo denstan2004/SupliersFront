@@ -34,13 +34,13 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
                             CodeData: 21,
                             ParamName: param 
                         };
-                       /* axios.post("https://apitest.spar.uz.ua/znp", payload, {
+                        axios.post("https://apitest.spar.uz.ua/znp", payload, {
                             withCredentials: true 
                              }).then(response => {
                                        console.log(response.data);
                                        newParamData[param] =response.data;
-                             });*/
-                             newParamData[param]=jsonValue
+                             });
+                            // newParamData[param]=jsonValue
 
                         
                             
