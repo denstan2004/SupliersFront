@@ -8,7 +8,7 @@ function Reports() {
     const [reportParam, setReportParam] = useState([]); // всі можливі параметри
     const [selectedReportParam, setSelectedReportParam] = useState([]); // параметри вибраного звіту
     const [selectedReport, setSelectedReport] = useState();
-    const [codereport, setCodereport] = useState();
+    const [codereport, setCodereport] = useState();//код обраного звіту
     const [responseTable, setResponseTable] = useState({ InfoColumn: [], Data: [] }); // Ініціалізуємо з порожніми масивами
 
     useEffect(() => {

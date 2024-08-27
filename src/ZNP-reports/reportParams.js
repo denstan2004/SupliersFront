@@ -3,14 +3,14 @@ import axios from "axios";
 import SingleParam from "./SingleParam";
 
 function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
-    const [paramName, setParamData] = useState({});
+    const [paramData, setParamData] = useState({});
     const [paramValuesMap, setParamValuesMap] = useState(new Map()); // Мапа для збереження значень
 
     useEffect(() => {
+        console.log(reportparams);
         setParamValuesMap(new Map());
         if (reportparams[0] !== '' && reportparams !== undefined) {
-            let newParamData = {};  // Копіюємо попередні значення
-            console.log(reportparams)
+            let newParamData = {};  
             const jsonValue = {
                 "State": 0,
                 "LispParam": [
@@ -41,11 +41,13 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
                                        newParamData[param] =response.data;
                              });
                         
+                            
                     }
                 }
             });
             setParamData(newParamData);
         }
+        
     }, [reportparams]);
 
     const handleValueChange = (name, paramCode) => {
@@ -59,6 +61,22 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
 
     const ButtonClick = () => {
         // перетворюємо мапу в масив масивів з двух елементів ключ- значення
+        if(reportparams[0]=='')
+        {
+            const payload = {
+                CodeData: 22,
+                CodeReport: codereport,
+                Parameters: [] 
+            };
+    
+            axios.post("https://apitest.spar.uz.ua/znp", payload, {
+                withCredentials: true 
+            }).then(response => {
+                console.log(response.data);
+                setTable(response.data);
+            });
+        }
+        else{
         const paramArray = Array.from(paramValuesMap.entries());
 
         const payload = {
@@ -73,7 +91,7 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
             console.log(response.data);
             setTable(response.data);
         });
-        
+    }
        
         
       
@@ -85,18 +103,23 @@ function ReportParams({ reportparams, allreportParam, codereport,setTable }) {
 
     return (
         <div>
-            {Object.keys(paramName).map((key) => (
-                <SingleParam
-                    key={key}
-                    allreportParam={allreportParam}
-                    paramName={key}
-                    onValueChange={handleValueChange}
-                    listParams={paramName[key]} // Передаємо масив значень у компонент DropdownList
-                />
-            ))}
-            <button onClick={ButtonClick}>Отримати</button>
+          {reportparams[0] !== '' ? (
+            Object.keys(paramData).map((key) => (
+              <SingleParam
+                key={key}
+                allreportParam={allreportParam}
+                paramName={key}
+                onValueChange={handleValueChange}
+                listParams={paramData[key]}
+              />
+            ))
+          ) : (
+            <div></div>
+          )}
+          <button onClick={ButtonClick}>Отримати</button>
         </div>
-    );
+      );
+      
 }
 
 export default ReportParams;
