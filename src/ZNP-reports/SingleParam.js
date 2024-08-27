@@ -2,9 +2,9 @@ import { useState } from "react";
 
 function SingleParam({ paramName, listParams, allreportParam, onValueChange }) {
     const [selectedValue, setSelectedValue] = useState("");
-   // console.log(paramName);// один із параметрів звіту наприклад codewares з можливих одного і більше параметрів
-   // console.log(listParams) // данні які містить нащ умовний codewares
-   // console.log(allreportParam) // всі можливі варіанти параметрів
+    console.log(paramName);// один із параметрів звіту наприклад codewares з можливих одного і більше параметрів
+    console.log(listParams) // данні які містить нащ умовний codewares
+    console.log(allreportParam) // всі можливі варіанти параметрів
     // onValueChange призначенні для зміни 
 
     let paramFormat;
