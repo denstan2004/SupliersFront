@@ -9,7 +9,7 @@ function App() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 //https://apitest.spar.uz.ua/api/Spar
-  localStorage.setItem("back-prefix", "https://localhost:59527/api/Spar");
+  localStorage.setItem("back-prefix", "https://apitest.spar.uz.ua/api/Spar");
 
   const HandleLogin = () => {
     axios.post(`${localStorage.getItem("back-prefix")}/Login`, {
