@@ -15,8 +15,8 @@ function Reports() {
         try {
             const payload = {
                 CodeData: 20,
-                Login: "Dstanislav",
-                PassWord: "d15012004"
+                Login: localStorage.getItem("login"),
+                PassWord: localStorage.getItem("password")
             };
             axios.post("https://apitest.spar.uz.ua/znp", payload, {
                 withCredentials: true 

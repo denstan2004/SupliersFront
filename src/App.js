@@ -26,7 +26,8 @@ function App() {
           if (response.data.status === false) {
             console.log(response.data.textState);
           } else {
-            console.log(123);
+              localStorage.setItem("login",login);
+              localStorage.setItem("password",password);
 
             if (response.data.data.isSupplier === false) {
               console.log("Navigating to manager choose page");

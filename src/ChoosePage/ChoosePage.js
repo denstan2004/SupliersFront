@@ -12,7 +12,9 @@ const HandleNavigateUpdate = () => {
 const HandleNavigateDiscount = () => {
     navigate(`/suplier/discounts`);
 }
-
+const HandleNavigateReports = () => {
+    navigate(`/reports`);
+}
     return(
         <div className="choose-page-container">
             <button onClick={HandleNavigateUpdate} className="choose-page-button">
@@ -20,6 +22,9 @@ const HandleNavigateDiscount = () => {
             </button>
             <button onClick={HandleNavigateDiscount} className="choose-page-button">
                 Додати акцію
+            </button>
+            <button onClick={HandleNavigateReports} className="choose-page-button">
+            Звіти
             </button>
             
         </div>

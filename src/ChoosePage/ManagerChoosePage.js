@@ -12,15 +12,20 @@ function ManagerChoosePage(){
     const HandleNavigateDiscount = () => {
         navigate(`/manager/requests`);
     }
+     const HandleNavigateReports = () => {
+        navigate(`/reports`);
+    }
 
     return(
         <div className="choose-page-container">
             <button onClick={HandleNavigateUpdate} className="choose-page-button">
-                        запити знижки   
-
+            Запити знижки   
             </button>
             <button onClick={HandleNavigateDiscount} className="choose-page-button">
-            запити зміни ціни 
+            Запити зміни ціни 
+            </button>
+            <button onClick={HandleNavigateReports} className="choose-page-button">
+            Звіти
             </button>
         </div>
     )
