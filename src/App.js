@@ -31,10 +31,10 @@ function App() {
 
             if (response.data.data.isSupplier === false) {
               console.log("Navigating to manager choose page");
-              navigate(`/${localStorage.getItem("front-prefix")}/manager/choose`);
+              navigate(`/manager/choose`);
             } else {
               console.log("Navigating to choose page");
-              navigate(`/${localStorage.getItem("front-prefix")}/choose`);
+              navigate(`/choose`);
             }
           }
         }

@@ -69,7 +69,6 @@ function SupplierProducts() {
         console.log(selectedDate);
     };
 
-    const prefix = localStorage.getItem("front-prefix") || '';
 
     const handleNavigate = () => {
         navigate(`/import`, { state: { products } });

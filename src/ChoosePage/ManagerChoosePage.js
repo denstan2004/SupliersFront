@@ -3,7 +3,6 @@ import "./ChoosePage.css"
 
 function ManagerChoosePage(){
     const navigate = useNavigate();
-    const prefix = localStorage.getItem("front-prefix") || '';
 
     const HandleNavigateUpdate = () => {
         navigate(`/manager/requests/discounts`);

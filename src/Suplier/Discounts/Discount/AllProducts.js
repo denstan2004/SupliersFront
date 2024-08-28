@@ -208,7 +208,7 @@ const setmessagefunc = (message) => {
         return adresses.map(adress => `${adress.name}, ${adress.adress}`).join('\n');
     };
 
-    const prefix = localStorage.getItem("front-prefix") || '';
+    
 
     const handleDiscountRequestNavigate = () => {
         navigate(`/suplier/discount/requests`);
