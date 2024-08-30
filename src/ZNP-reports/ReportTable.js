@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import "./ReportTable.css"
+import * as XLSX from "xlsx";
+import "./ReportTable.css";
+
 function ReportTable({ responseTable }) {
     const [header, setHeader] = useState([]);
     const [body, setBody] = useState([]);
@@ -21,8 +23,19 @@ function ReportTable({ responseTable }) {
         console.log(responseTable.Data);
     }, [responseTable]); // Adding [responseTable] as a dependency
 
+    const exportToExcel = () => {
+        const data = [header, ...body]; // Combine header and body
+
+        const worksheet = XLSX.utils.aoa_to_sheet(data); // Convert array of arrays to sheet
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Report");
+
+        XLSX.writeFile(workbook, "report.xlsx"); // Generate and download Excel file
+    };
+
     return (
         <div>
+            <button onClick={exportToExcel}>Export to Excel</button>
             <div className="report-table-header">
                 {header.length > 0 ? (
                     <ReportTableHeader header={header} />
@@ -41,8 +54,8 @@ function ReportTable({ responseTable }) {
     );
 }
 
-function ReportTableHeader({ header }) { // Destructure 'header'
-    console.log(header)
+function ReportTableHeader({ header }) {
+    console.log(header);
     return (
         <div className="report-table-header">
             {header.map((element, index) => (
@@ -67,6 +80,5 @@ function ReportTableBody({ body }) {
         </div>
     );
 }
-
 
 export default ReportTable;
