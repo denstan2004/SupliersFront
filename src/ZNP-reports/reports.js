@@ -18,7 +18,7 @@ function Reports() {
                 Login: localStorage.getItem("login"),
                 PassWord: localStorage.getItem("password")
             };
-            axios.post("https://apitest.spar.uz.ua/znp", payload, {
+            axios.post("http://api.spar.uz.ua/znp", payload, {
                 withCredentials: true 
             })
                 .then(response => {
@@ -54,6 +54,7 @@ function Reports() {
 
     return (
         <div className="reports-container">
+            <div className="reports-body">
             <select className="reports-select" value={selectedReport} onChange={handleReportChange}>
                 {report.map(rep => (
                     <option key={rep} value={rep}>{rep[1]}</option>
@@ -61,6 +62,7 @@ function Reports() {
             </select>
             <ReportParams codereport={codereport} reportparams={selectedReportParam} allreportParam={reportParam} setTable={SetTable} />
             <ReportTable responseTable={responseTable} />
+            </div>
         </div>
     );
 }

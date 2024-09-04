@@ -1,27 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function SingleParam({ paramName, listParams, allreportParam, onValueChange }) {
     const [selectedValue, setSelectedValue] = useState("");
-    console.log(paramName);// один із параметрів звіту наприклад codewares з можливих одного і більше параметрів
-    console.log(listParams) // данні які містить нащ умовний codewares
-    console.log(allreportParam) // всі можливі варіанти параметрів
-    // onValueChange призначенні для зміни 
+
+    console.log(paramName); // один із параметрів звіту, наприклад, codewares з можливих одного і більше параметрів
+    console.log(listParams); // дані, які містить наш умовний codewares
+    console.log(allreportParam); // всі можливі варіанти параметрів
+    // onValueChange призначений для зміни 
 
     let paramFormat;
     let Name;
 
-    allreportParam.forEach(element => {
+    allreportParam.forEach((element) => {
         if (element[1] === paramName) {
             paramFormat = element[2];
             Name = element[3];
         }
     });
 
+    // Використання useEffect для автоматичного встановлення першого значення списку
+    useEffect(() => {
+        if (paramFormat === "list" && Array.isArray(listParams.LispParam) && listParams.LispParam.length > 0) {
+            const firstValue = listParams.LispParam[0][0];
+            setSelectedValue(firstValue);
+            onValueChange(paramName, firstValue); // Встановлюємо перше значення та передаємо його в onValueChange
+        }
+    }, [paramFormat, listParams, paramName, onValueChange]); // Залежності
+
     const handleChange = (event) => {
-        const value = event.target.value;// Одне з вибраних значень codewares наприклад lubo....
-        
+        const value = event.target.value; // Одне з вибраних значень codewares, наприклад lubo....
         setSelectedValue(value);
-        onValueChange(paramName, event.target.value); 
+        onValueChange(paramName, value); 
     };
 
     return (
