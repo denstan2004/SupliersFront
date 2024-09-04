@@ -18,7 +18,7 @@ function Reports() {
                 Login: localStorage.getItem("login"),
                 PassWord: localStorage.getItem("password")
             };
-            axios.post("http://api.spar.uz.ua/znp", payload, {
+            axios.post("httpx://apitest.spar.uz.ua/znp", payload, {
                 withCredentials: true 
             })
                 .then(response => {
